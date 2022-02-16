@@ -175,8 +175,8 @@ int main(){
 
 // string str ="01234";
 
-// string str1 = str.substr(0 , 2);
-// string str2 = str.substr(2);
+// string str1 = str.substr(0 , 2);   o/p= "01"
+// string str2 = str.substr(2);       o/p ="234"
 
 // cout<<str1<<"  "<<str2;
 
@@ -186,7 +186,7 @@ int main(){
     //      cout<<str[i]-'a'<<endl;
     //  }
      string newstr ="abcdef";
-    cout<<newstr[5]-'a';
+     cout<<newstr[1]-'a';
 
 return 0;
 }
