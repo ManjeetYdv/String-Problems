@@ -10,7 +10,7 @@ bool checkPangram(string str){
               count[str[i]-'a'] =true;
           }
           else if(str[i]>='A' and str[i]<='Z'){
-              count[str[i]-'A'] =true;;
+              count[str[i]-'A'] =true;
           }
       }
 
