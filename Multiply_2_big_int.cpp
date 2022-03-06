@@ -57,7 +57,6 @@ string multiply(string str1 ,string str2)
    }
 
 
-   cout<<endl;
    string result="";
   
 
