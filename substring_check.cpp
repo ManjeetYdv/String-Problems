@@ -2,21 +2,14 @@
 using namespace std;
 
 
-bool substring(string s1 , string s2){
+bool substring(string str1 , string str2){
    
-   bool substr= false;
-    for(int i=0;  i<s1.size() ;i++){
-
-        for(int j=1 ; j<=s1.size()-i ;j++){
-             string str = s1.substr(i , j);
-             if(str.compare(s2)==0){
-                 return true;
-             }
-          
-        }
-    }
-
-    return substr;
+  if(str1.find(str2)>=0 and str1.find(str2)<str1.length()){
+    return true;
+   }
+   else{
+     return false;
+   }
 
 }
 
@@ -24,12 +17,12 @@ bool substring(string s1 , string s2){
 int main(){
     
    string str="xyzzaaaaaa";
-   string str2="xyzz";
+   string str2="xyzaz";
    if(substring(str , str2)){
-       cout<<"yes";
+       cout<<"str2 is a substring of str1";
    }
    else{
-       cout<<"no";
+       cout<<"str2 is not a substring of str2";
    }
 
 
