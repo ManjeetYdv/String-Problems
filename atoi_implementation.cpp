@@ -1,51 +1,50 @@
-#include<iostream>
-using namespace std;
-
-
-int strToInt(string str){
- 
-   int integer = 0;
-
-   if(str[0]!='-'){
-   for(int i=0 ; i<str.length() ; i++){
+class Solution {
+    public int myAtoi(String str) {
+        
      
+		int i = 0;
+		int no =0;
+		boolean neg = false;
 
-       if(int(str[i])>=48 and int(str[i])<=57){
-           int x = int(str[i]) -'0';
-           integer = integer*10 + x;
-       }
-       else{
-           return -1;
-       }
-   }
- }
- else{
-     for(int i=1; i<str.length() ; i++){
-     
+		// triming white spaces
+		while(i<str.length() && str.charAt(i)==' '){
+			i++;
+		}
 
-       if(int(str[i])>=48 and int(str[i])<=57){
-           int x = int(str[i]) -'0';
-           integer = integer*10 + x;
-       }
-       else{
-           return -1;
-       }
-   }
+		if(i<str.length() && str.charAt(i) == '-'){
+			neg = true;
+			i++;
+		} else if(i<str.length() && str.charAt(i) == '+'){
+			i++;
+		}
 
- }
+		// now everything has to be no
+		while(i<str.length() && Character.isDigit(str.charAt(i))){
+            
+			int c = str.charAt(i) -'0';
+            
+			if((Integer.MAX_VALUE - c)/10 <no){
+				if(neg){
+					return Integer.MIN_VALUE;
+				} else{
+					return Integer.MAX_VALUE;
+				}
+			}
 
-  
-   if(str[0]=='-'){
-       return integer - 2*integer;
-   }
-   else{
-       return integer;
-   }
+			no = no*10 +  (c);
+			i++;
+		}
 
-}
+		if(no==0){
+			return 0;
+		} else{
+            
+			if(neg){
+				return -no;
+			} else
+				return no;
+		}
 
-int main(){
-    string str="-1";
-
-    cout<<"int: "<<strToInt(str);
+        
+    }
 }
